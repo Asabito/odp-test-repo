@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<form id="newCustomerForm" action="">
+    <div id="addCustomer" class="">
+        <h1>New Customer</h1>
+        <label for="">Name</label><br>
+        <input id="userName" type="text"><br>
+        <button type="button" onclick="addCustomerWrapper()">Save</button>
+    </div>
+    <div id="customerList"></div>
+</form>
+
+<div id="searchCustomer">
+<h1>Search Customer</h1>
+<input type="text" id="searchCustomerInput"><br>
+<button type="button" onclick="searchCustomer()">Search</button>
+
+<div id="searchResult">
+    <p id="custNameLabel"></p>
+    <p id="custNumberLabel"></p>
+    <p id="custBalanceLabel"></p>
+</div>
+
+
+<input type="text" id="withdrawInput" placeholder="nominal withdraw..."><br>
+<button>Withdraw</button><br>
+
+<input type="text" id="depositInput" placeholder="nominal deposit..."><br>
+<button>Deposit</button>
+</div>
+
+    <div id="listCustomer">
+        <!-- <table id="customerListTable">
+
+        </table> -->
+    </div>
+</body>
+
+<script>
+    let customers = []
+    function addCustomerWrapper(){
+            function addCustomer(name, accountNumber){
+            let newCustomer = {
+                name: name,
+                accountNumber: accountNumber,
+                balance: 0,
+                transactionHistory: []
+            }
+            customers.push(newCustomer)
+        }
+
+        function accountNumberRandomizer(){
+        let tempAccountNumber="";
+        for(i=0; i<12; i++){
+            tempAccountNumber += (Math.floor(Math.random()*(9-0)-0))
+        }
+        return tempAccountNumber
+        }
+        addCustomer(document.forms["newCustomerForm"]["userName"].value, accountNumberRandomizer())
+        console.log(customers)
+        }
+
+
+    function searchCustomer(){
+        
+        console.log(document.getElementById("searchCustomerInput").value)
+        customers.forEach(cust => {
+            console.log(cust["name"])
+            if(document.getElementById("searchCustomerInput").value === cust["name"]){
+                console.log("ketemu cuyyy")
+            }
+            // customerListTable.innerHTML += `
+            // <tr>
+            //     <th>${cust.name}</th>
+            //     <th>${cust.accountNumber}</th>
+            //     <th>${cust.balance}</th>
+            //     <th>${cust.transactionHistory}</th>
+            // </tr>
+            // `
+        })
+    }
+    
+    
+    console.log(customers)
+</script>
+
+</html>

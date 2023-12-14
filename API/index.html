@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <ul id="list"></ul>
+    <div class="w-[900px] h-[500px] overflow-y-scroll border-solid border-2">
+        <table class="w-full  h-[500px]" id="content" style="border: 1px solid black;"></table>
+    </div>
+    </table>
+</body>
+
+<script>
+    // const fetchedData = fetch('https://jsonplaceholder.typicode.com/todos/')
+    //       .then((elemen) => elemen.json())
+    //       .then((elemen) => console.log(elemen[20]))
+
+    // const fetchedData = fetch('https://jsonplaceholder.typicode.com/todos/')
+    //       .then((elemen) => elemen.json())
+    // console.log(typeof(fetchedData))
+
+    const fetchedData = fetch('https://jsonplaceholder.typicode.com/todos/')
+        .then((elemen) => elemen.json())
+        .then((elemen) => {
+            // create table
+            const table = document.createElement("table");
+            const tblBody = document.createElement("tbody");
+            //   console.log(elemen[0].value)
+
+            // buat header
+            content.innerHTML += `<tr class="pb-[10px] pt-[10px]">
+            <th class="border-solid border-t-2 pb-[10px] pt-[10px]">userId</th>
+            <th class="border-solid border-t-2 pb-[10px] pt-[10px]">id</th>
+            <th class="border-solid border-t-2 pb-[10px] pt-[10px]">title</th>
+            <th class="border-solid border-t-2 pb-[10px] pt-[10px]">completed</th>
+            </tr>`
+            elemen.sort(() =>Math.random()-0.5)
+            // elemen.reverse()
+            // iterate element
+            elemen.forEach(element => {
+                content.innerHTML += `<tr">
+                                    <td class="border-solid border-t-2 pt-[10px] pb-[10px]">${element.userId}</td>
+                                    <td class="border-solid border-t-2 pt-[10px] pb-[10px]">${element.id}</td>
+                                    <td class="border-solid border-t-2 pt-[10px] pb-[10px]">${element.title}</td>
+                                    <td class="border-solid border-t-2 pt-[10px] pb-[10px]">${element.completed}</td>
+                                    </tr>`
+            });
+
+        })
+
+</script>
+
+</html>

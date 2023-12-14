@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator ini teh</title>
+    <link rel="stylesheet" href="./style.css">
+    
+</head>
+<body>
+<form id="savingForm">
+    <div id="formWrapper">
+        <h1 id="title">Itung itungan</h1><br>  
+        <div class="formInput">
+            <div class="labelWrapper">
+                <label for="initialSavings">Initial Savings</label>
+            </div>
+            <input id="initialSavings" type="text" required>
+        </div>
+        <div class="formInput">
+            <div class="labelWrapper">
+                <label for="annualInterest">Annual Interest</label>
+            </div>
+            <input id="annualInterest" type="text" required>
+        </div>
+        <div class="formInput">
+            <div class="labelWrapper">
+                <label for="savingPeriod">Saving Period</label>
+            </div>
+            <input id="savingPeriod" type="text" required>
+        </div>
+        <div id="buttonWrapper">
+            <button type="button" id="calcButton" onclick="savingCalculator()">Calculate</button>
+        </div>
+        <div id="resultWrapper">
+            <p id="calcResult"></p>
+        </div>
+        
+    </div>
+</form>
+</body>
+
+
+<script src="./main.js"></script>
+
+</html>

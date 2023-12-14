@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form id="salaryForm">
+        <div>
+            <label for="">Basic Salary</label>
+            <input id="basicSalary" type="text" required>
+        </div>
+        <div>
+            <label for="">Bonus</label>
+            <input id="bonus" type="text" required>
+        </div>
+        <div>
+            <label for="">Deduction</label>
+            <input id="deduction" type="text" required>
+        </div>
+        <div>
+            <button type="button" onclick="salaryCalculate()">Calculate</button>
+        </div>
+    </form>
+    <p id="totalSalary"></p>
+</body>
+<script src="main.js"></script>
+</html>
